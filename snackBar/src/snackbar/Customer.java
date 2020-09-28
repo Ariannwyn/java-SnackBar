@@ -50,6 +50,17 @@ public class Customer
         this.custCash = custCash;
     }
 
+
+        //////////////////////
+        //      METHODS     //
+        //////////////////////
+    public void buySnack(double cost) {
+		this.custCash -= cost;
+	}
+
+    public void addCash(double custCash){
+        this.custCash += custCash;
+    }
     // @Override
     // public String toString(){
     //     String rtnStr + "Customer name: " + custName + " cash: " + custCash;

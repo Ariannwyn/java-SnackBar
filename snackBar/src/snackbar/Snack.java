@@ -39,8 +39,8 @@ public class Snack
         return snackName;
     }
 
-    public double getSnackCost(){
-        return snackCost;
+    public double getSnackCost(int snackCount){
+        return snackCost * snackCount;
     }
 
     public int getSnackCount(){
@@ -66,9 +66,23 @@ public class Snack
         this.snackCount = snackCount;
     }
 
-}
+        //////////////////////
+        //      METHODS     //
+        //////////////////////
 
-// get quantity
-// add quantity when given how many to add
-// buy snack when given how many to buy
-// get total cost given a quantity
+    public double buySnack(int vendingStock){
+        if (snackCount > vendingStock){
+            this.snackCount -= vendingStock;
+            return snackCost * vendingStock;
+        } else {
+            vendingStock -= snackCount;
+            System.out.println("You can only buy " + vendingStock + " " + snackName);
+            return 0;
+        }
+    }
+
+    public double addSnack(int snackCount){
+        return this.snackCount += snackCount;
+    }
+
+}
